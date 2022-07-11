@@ -24,7 +24,7 @@ func serve(text string) *httptest.Server {
 	return ts
 }
 
-func render(text string) {
+func render(text string, out string) {
 
 	ts := serve(text)
 
@@ -40,7 +40,7 @@ func render(text string) {
 	if err := chromedp.Run(ctx, elementScreenshot(ts.URL, `span`, &buf)); err != nil {
 		log.Fatal(err)
 	}
-	if err := ioutil.WriteFile("result.png", buf, 0o644); err != nil {
+	if err := ioutil.WriteFile(out, buf, 0o644); err != nil {
 		log.Fatal(err)
 	}
 
