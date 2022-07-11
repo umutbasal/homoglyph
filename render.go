@@ -16,9 +16,11 @@ func serve(text string) *httptest.Server {
 	ts := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "text/html; charset=utf-8")
 		io.WriteString(w, strings.TrimSpace(`
+		<html>
 		<body>
-			<span>`+text+`</span>
+			<span style="font-size:42px">`+text+`</span>
 		</body>
+		</html>
 			`))
 	}))
 	return ts
