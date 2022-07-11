@@ -46,7 +46,7 @@ func render(text string, out string) {
 		log.Fatal(err)
 	}
 
-	log.Printf("wrote elementScreenshot.png and fullScreenshot.png")
+	log.Printf("wrote %s", out)
 }
 
 // elementScreenshot takes a screenshot of a specific element.
