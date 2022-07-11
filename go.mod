@@ -17,5 +17,6 @@ require (
 
 require (
 	github.com/chromedp/chromedp v0.8.2
+	github.com/otiai10/gosseract/v2 v2.3.1
 	golang.org/x/text v0.3.7 // indirect
 )
